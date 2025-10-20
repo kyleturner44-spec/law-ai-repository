@@ -58,7 +58,7 @@ const AIUseCaseRepository = () => {
   };
 
   const handleAdminLogin = () => {
-    if (adminPassword === 'admin123') {
+    if (adminPassword === 'VAILL1!') {
       setIsAdmin(true);
       setShowAdminLogin(false);
       setAdminPassword('');
