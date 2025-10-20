@@ -410,7 +410,8 @@ const AIUseCaseRepository = () => {
     return (
       <div className="min-h-screen bg-gradient-to-br from-white to-gray-50">
         <div className="max-w-6xl mx-auto p-6">
-          <div className="mb-12">
+          <div className="mb-12 text-center">
+            <img src="/logo.png" alt="Company Logo" className="h-32 mx-auto mb-6" />
             <h1 className="text-5xl font-bold text-gray-900 mb-3">AI Use Cases for Law</h1>
             <p className="text-gray-600 text-lg">Discover how law students are leveraging AI in school and for summer work. We are just looking to spread the word about how best we can take advantage of AI capabilities and make those work for us!</p>
           </div>
