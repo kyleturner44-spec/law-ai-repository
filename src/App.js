@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { Search, Plus, CheckCircle, XCircle, Tag, Trash2, LogOut } from 'lucide-react';
+import { Search, Plus, CheckCircle, XCircle, Trash2, LogOut } from 'lucide-react';
 import { db } from './firebase';
 import { collection, addDoc, getDocs, deleteDoc, doc, updateDoc, query, where } from 'firebase/firestore';
+import FormAnalyzer from './FormAnalyzer';
 
 const AIUseCaseRepository = () => {
   const [view, setView] = useState('browse');
@@ -406,6 +407,10 @@ const AIUseCaseRepository = () => {
     );
   }
 
+  if (view === 'form-analyzer') {
+    return <FormAnalyzer onBack={() => setView('browse')} />;
+  }
+
   if (view === 'browse') {
     return (
       <div className="min-h-screen bg-gradient-to-br from-white to-gray-50">
@@ -419,15 +424,33 @@ const AIUseCaseRepository = () => {
           <div className="flex gap-4 mb-8 flex-wrap">
             <button
               onClick={() => setView('browse')}
-              className="px-6 py-3 bg-amber-600 text-white rounded-lg hover:bg-amber-700 transition font-semibold"
+              className={`px-6 py-3 rounded-lg transition font-semibold ${
+                view === 'browse'
+                  ? 'bg-amber-600 text-white'
+                  : 'bg-white border-2 border-amber-600 text-amber-600 hover:bg-amber-50'
+              }`}
             >
               Browse
             </button>
             <button
               onClick={() => setView('submit')}
-              className="px-6 py-3 bg-white border-2 border-amber-600 text-amber-600 rounded-lg hover:bg-amber-50 transition font-semibold"
+              className={`px-6 py-3 rounded-lg transition font-semibold ${
+                view === 'submit'
+                  ? 'bg-amber-600 text-white'
+                  : 'bg-white border-2 border-amber-600 text-amber-600 hover:bg-amber-50'
+              }`}
             >
               Submit
+            </button>
+            <button
+              onClick={() => setView('form-analyzer')}
+              className={`px-6 py-3 rounded-lg transition font-semibold ${
+                view === 'form-analyzer'
+                  ? 'bg-amber-600 text-white'
+                  : 'bg-white border-2 border-amber-600 text-amber-600 hover:bg-amber-50'
+              }`}
+            >
+              Form Analyzer
             </button>
             <button
               onClick={() => setShowAdminLogin(true)}

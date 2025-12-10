@@ -1,6 +1,96 @@
-# Getting Started with Create React App
+# AI Use Cases for Law - Interactive Platform
+
+A comprehensive web application for law students and legal professionals featuring an AI Use Case Repository and an intelligent Form Analyzer system.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Features
+
+### 1. AI Use Case Repository
+Browse, submit, and discover innovative ways law students and professionals are using AI in their work.
+
+- **Browse Use Cases**: View approved AI use cases with categories and search
+- **Submit Ideas**: Share your own AI applications in legal work
+- **Admin Dashboard**: Review, approve, and categorize submissions
+
+### 2. Form Analyzer & Questionnaire System (NEW!)
+Upload any PDF form and let AI help you fill it out with an interactive questionnaire.
+
+- **Intelligent Form Analysis**: AI detects questions and fields from uploaded PDFs
+- **Interactive Questionnaire**: Step-by-step guided form completion
+- **Automatic Form Filling**: Generates completed PDFs with your answers
+- **Secure Storage**: Forms and answers stored in Firebase
+
+📖 **[View detailed Form Analyzer documentation →](FORM_ANALYZER_README.md)**
+
+## Quick Start
+
+### Installation
+
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd law-ai-repository
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
+
+4. **Open your browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000)
+
+### First-Time Setup
+
+- **Firebase**: The app is pre-configured with Firebase. Ensure Firebase Storage is enabled for the Form Analyzer feature.
+- **Admin Access**: Use password `VAILL1!` to access the admin dashboard.
+- **Form Analyzer**: Currently uses mock AI analysis. See [FORM_ANALYZER_README.md](FORM_ANALYZER_README.md) for production Claude API setup.
+
+## Technology Stack
+
+- **Frontend**: React 19 with Hooks
+- **Styling**: Tailwind CSS 4
+- **Database**: Firebase Firestore
+- **Storage**: Firebase Storage
+- **PDF Processing**: pdf-lib, pdfjs-dist
+- **AI Integration**: Claude API (via backend - see documentation)
+- **Icons**: Lucide React
+
+## Project Structure
+
+```
+law-ai-repository/
+├── public/              # Static assets
+├── src/
+│   ├── App.js          # Main application component
+│   ├── FormAnalyzer.js # Form analyzer component
+│   ├── aiService.js    # AI integration service
+│   ├── firebase.js     # Firebase configuration
+│   └── ...
+├── FORM_ANALYZER_README.md  # Detailed Form Analyzer docs
+└── package.json        # Dependencies
+```
+
+## Usage
+
+### Using the AI Use Case Repository
+
+1. **Browse**: Click "Browse" to view approved AI use cases
+2. **Submit**: Click "Submit" to share your own AI use case
+3. **Admin**: Click "Admin" to manage submissions (requires password)
+
+### Using the Form Analyzer
+
+1. **Upload**: Click "Form Analyzer" and upload a PDF form
+2. **Analyze**: The system extracts questions from your form
+3. **Answer**: Complete the interactive questionnaire
+4. **Download**: Get your filled PDF form
 
 ## Available Scripts
 
